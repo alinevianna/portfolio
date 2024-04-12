@@ -1,0 +1,331 @@
+/*CSS Reset / Normalize*/
+/*Já deixaremos o básico de reset de estilos. Caso queira adicionar mais informações
+coloque nas sessões indicadas*/
+
+:root{
+    /*Insira a variavel das outras cores inspecionando o modelo do figma*/
+    /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
+   --cor-de-fundo: #FBEFF4;
+   --cor-secundaria: #FBDADE;
+   --cor-de-link: #000;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-de-fundo) ;
+    font-family: 'Raleway';
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+ol, ul,li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--cor-de-link);
+}
+
+section {
+    padding: 0 9.5rem 0 9.5rem;
+}
+
+/*Sessão Menu*/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625rem;
+}
+
+section.menu{
+    display: flex;
+    height: 5.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu__list {
+    display: flex;
+    gap: 1.87rem;
+}
+
+/*Sessão Title*/
+
+section.title{
+
+}
+
+.title__div{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.94rem 0 0.94rem 0;
+}
+
+.title__profile {
+    border-radius: 50%;
+}
+
+.title__bio {
+    font-family: Raleway;
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 61.05px;
+}
+
+.title__network{
+    display: flex;
+    gap: 50px;
+}
+
+/*Sessão About*/
+
+section.about{ 
+    background: var(--cor-secundaria);
+    height: 383px;
+    display: flex;
+    align-items: center;
+}
+
+.about__container {
+    width: 70%;
+}
+
+/*Sessão Skills*/
+
+section.skills {
+}
+
+.skills__title {
+    font-family: 'Raleway';
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 37.57px;
+    text-align: center;
+}
+
+.skills__line{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+}
+
+.skills__box {
+    display: flex;
+    align-items: self-end;
+    background: #FFFFFF;
+    width: 11rem;
+    height: 10.85rem;
+}
+
+.skills__box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/*Sessão Hobbies*/
+
+section.hobbies{
+    
+}
+
+.hobbies__title {
+    font-family: Raleway;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 37.57px;
+    text-align: center;
+}
+
+.hobbies__line{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 1rem;
+}
+
+.hobbies__box {
+    display: flex;
+    align-items: self-end;
+    background: #FFFFFF;
+    width: 11rem;
+    height: 10.85rem;
+}
+
+.hobbie__box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/* Experiência Acadêmica*/
+
+section.academic{
+    text-align: center;
+    background: var(--cor-secundaria);
+    padding-top: 0.625rem;
+}
+
+.academic__courses{
+    display: flex;
+}
+
+.academic__courses__box ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.academic__courses img {
+    width: 80%;
+}
+
+/* experiência*/
+
+section.experience{
+
+}
+
+/*Contato*/
+
+section.formcontato {
+    background: var(--cor-secundaria);
+}
+
+.formcontato__contato {
+    display: flex;
+    gap: 5px;
+}
+
+.formcontato__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/*footeer*/
+
+section.footer{
+    text-align: center;
+   
+}
+
+/* Chegou a hora de se desafiar com a responsividade, 
+utilize como referência os breakpoints @media abaixo*/
+
+@media (max-width: 1250px) {
+
+    *{
+        padding: 0;
+    }
+
+
+    section {
+        padding: 0.94rem;
+    }
+
+    /*Menu*/
+
+
+    /*Titulo*/
+
+
+    .title__profile {
+        width: 30%;
+    }
+
+    /* .title__container {
+        width: 21rem;
+    } */
+
+    .title__bio {
+        font-size: 2.25rem;
+    }
+
+    .title__network{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+    /*Sessão sobre*/
+
+    .about__container {
+        width: 100%;
+    }
+
+    /*Skills e Hobbies*/
+
+    .skills__line, .hobbies__line {
+        flex-wrap: wrap;
+    }
+
+    .skills__box, .hobbies__box {
+        width: 6rem;
+        height: 6rem;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .skills__box ul, .hobbies__line ul {
+        padding: 0;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 5px;
+    }
+
+    
+    /*Formação Acadêmica*/
+
+    .academic__courses {
+        flex-direction: column;
+    }
+
+    .formcontato__contato {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .formcontato--esquerda img {
+        width: 70%;
+    }
+
+    /*Experiência Profissional*/
+
+    /*Contato*/
+
+    /*Footer*/
+
+}
+
+@media (max-width: 650px) {
+
+    .menu__list__item {
+        display: none;
+    }
+
+    .title__div {
+        flex-direction: column;
+    }
+
+    .title__profile {
+        width: 70%;
+    }
+
+    .title__container {
+        width: 21rem;
+    }
+
+}
