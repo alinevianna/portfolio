@@ -27,7 +27,7 @@
         </header>
         <nav>
             <ul class="menu__list">
-                <li class="menu__list__item"><a href="#sobremim">Sobre mim</a></li>
+                <li class="menu__list__item"><a href="#sobremim" class="active">Sobre mim</a></li>
                 <li class="menu__list__item"><a href="#skills">Skills</a></li>
                 <li class="menu__list__item"><a href="#hobbies">Hobbies</a></li>
                 <li class="menu__list__item"><a href="#formacao">Formações e Cursos</a></li>
@@ -45,9 +45,9 @@
                 <h2 class="title__bio">Olá, sou Aline Meira e construo páginas web</h2>
                 <h3 class="title__subsection">Eu sou formada em Análise e Desenvolvimento de Sistemas e atualmente estou participando no projeto Oracle ONE na Alura.</h3>
                 <ul class="title__network">
-                    <li class="title__network__item"><a href="https://github.com/alinevianna">Github <img src="assets\arrow.png"> </a></li>
-                    <li class="title__network__item"><a href="https://linkedin.com/in/aline-vianna">Linkedin <img src="assets\arrow.png"></a></li>
-                    <li class="title__network__item"><a href="">Curriculo <img src="assets\arrow.png"></a></li>
+                    <li class="title__network__item"><a href="https://github.com/alinevianna"  target="_blank">Github <img src="assets\arrow.png"> </a></li>
+                    <li class="title__network__item"><a href="https://linkedin.com/in/aline-vianna"  target="_blank">Linkedin <img src="assets\arrow.png"></a></li>
+                    <li class="title__network__item"><a href="https://www.canva.com/design/DAF43aotjYg/M2Opi9doueu0AdLTBAiMRA/view" target="_blank">Curriculo<img src="assets\arrow.png"></a></li>
                 </ul>
             </div>
         </div>
@@ -231,8 +231,8 @@
             <h2 class="experience__title">Jogo do número secreto criado com HTML, CSS e JavaScript</h2>
                 <h3 class="experience__text">Challenge Oracle </h3>
                     <div class="experience__description">
-                            <span class="experience__repo"><a href="https://github.com/alinevianna/jogo-numero-secreto"><button class="experiencia__botao--repo">Repositório</button></a></span>
-                            <span class="experience__demo"><a href="https://jogo-numero-secreto-ten-blush.vercel.app"><button class="experiencia__botao--demo">Ver demo</button></a></span>
+                            <span class="experience__repo"><a href="https://github.com/alinevianna/jogo-numero-secreto" target="_blank"><button class="experiencia__botao--repo">Repositório</button></a></span>
+                            <span class="experience__demo"><a href="https://jogo-numero-secreto-ten-blush.vercel.app" target="_blank"><button class="experiencia__botao--demo">Ver demo</button></a></span>
                     </div>
             </div>
         </div>  
@@ -248,11 +248,14 @@
                     <h3 class="formcontato__subtext">Quer entrar em contato comigo?</h3>
                     <h3 class="formcontato__subtext">Preencha o formulário ao lado e entrarei em contato o mais rápido possível. </h3>
                     <form class="formcontato__form">
-                        <input class="formcontato__input" type="text" id="nome" placeholder="Nome">
-                        <input class="formcontato__input" type="email" id="email" placeholder="Email">
-                        <input class="formcontato__input" type="text" id="assunto" placeholder="Assunto">
-                        <textarea class="formcontato__textarea" rows="5" cols="40" id="mensagem" name="mensagem" placeholder="Sua mensagem"></textarea>
-                        <button class="formcontato__botao">Enviar mensagem</button>
+                        <input class="formcontato__input required" type="text" id="nome" placeholder="Nome">
+                        <span class="span-required">Nome deve ter no mínimo 3 caracteres.</span>
+                        <input class="formcontato__input required" type="email" id="email" placeholder="Email">
+                        <span class="span-required">Digite um email válido.</span>
+                        <input class="formcontato__input required" type="text" id="assunto" placeholder="Assunto">
+                        <span class="span-required">Digite uma mensagem válida.</span>
+                        <textarea class="formcontato__textarea required" rows="5" cols="40" id="mensagem" name="mensagem" placeholder="Sua mensagem"></textarea>
+                        <button type="submit" class="formcontato__botao">Enviar mensagem</button>
                     </form>
                 </div>
             </div>
