@@ -256,12 +256,12 @@
                     <h2 class="formcontato__title">Contato</h2>
                     <h3 class="formcontato__subtext">Quer entrar em contato comigo?</h3>
                     <h3 class="formcontato__subtext">Preencha o formulário ao lado e entrarei em contato o mais rápido possível. </h3>
-                    <form class="formcontato__form">
-                        <input class="formcontato__input required" type="text" id="nome" placeholder="Nome">
+                    <form action="https://api.sheetmonkey.io/form/rKUrmkSXdfNUp23FNZ9FBK" method="post" class="formcontato__form">
+                        <input class="formcontato__input required" type="text" name="nome"id="nome" placeholder="Nome">
                         <span class="span-required">Nome deve ter no mínimo 3 caracteres.</span>
-                        <input class="formcontato__input required" type="email" id="email" placeholder="Email">
+                        <input class="formcontato__input required" type="email" name="email" id="email" placeholder="Email">
                         <span class="span-required">Digite um email válido.</span>
-                        <input class="formcontato__input required" type="text" id="assunto" placeholder="Assunto">
+                        <input class="formcontato__input required" type="text" name="assunto" id="assunto" placeholder="Assunto">
                         <span class="span-required">Digite uma mensagem válida.</span>
                         <textarea class="formcontato__textarea required" rows="5" cols="40" id="mensagem" name="mensagem" placeholder="Sua mensagem"></textarea>
                         <button type="submit" class="formcontato__botao">Enviar mensagem</button>
