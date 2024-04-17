@@ -19,6 +19,7 @@
     --cor-fonte-secundaria: #0F0E3E;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
@@ -117,9 +118,14 @@ a:focus::after {
     line-height: 61.05px;
 }
 
+.title__subsection{
+    font-size: 1.5rem;
+}
+
 .title__network{
     display: flex;
     gap: 50px;
+    font-size: 20px;
 }
 
 /*Sessão About*/
@@ -133,6 +139,7 @@ section.about{
 
 .about__container {
     width: 70%;
+    font-size: 1.2rem;
 }
 
 /*Sessão Skills*/
@@ -191,13 +198,13 @@ section.academic{
 
 .academic__courses{
     display: flex;
+    justify-content: center;
 }
 
 .academic__courses__box ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 5px;
+    font-size: 1.2rem;
 }
 
 .academic__courses img {
