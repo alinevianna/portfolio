@@ -451,6 +451,14 @@ section.footer{
 
 @media (max-width: 650px) {
 
+    .about__container {
+        font-size: 1rem;
+    }
+
+    .about__container img {
+        width: 25%;
+    }
+
     .menu__list__item {
         display: none;
     }
