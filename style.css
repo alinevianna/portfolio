@@ -19,7 +19,6 @@
     --cor-fonte-secundaria: #0F0E3E;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -48,6 +47,63 @@ section {
     padding: 0 9.5rem 0 9.5rem;
 }
 
+/*Botão Dark Mode*/
+
+.btn-dark-mode {
+    --button-width: 2.5em;
+    --button-height: 1em;
+    --toggle-diameter: 0.5em;
+    --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+    --toggle-shadow-offset: 10px;
+    --toggle-wider: 3em;
+    --color-green: #4296f4;
+}
+
+.slider {
+    display: inline-block;
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--cor-quarter);
+    border-radius: calc(var(--button-height) / 2);
+    position: relative;
+    transition: 0.3s all ease-in-out;
+}
+
+.slider::after {
+    content: "";
+    display: inline-block;
+    width: var(--toggle-diameter);
+    height: var(--toggle-diameter);
+    background-color: #fff;
+    border-radius: calc(var(--toggle-diameter) / 2);
+    position: absolute;
+    top: var(--button-toggle-offset);
+    transform: translateX(var(--button-toggle-offset));
+    box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+    transition: 0.3s all ease-in-out;
+}
+
+.btn-dark-mode label input[type="checkbox"]:checked + .slider {
+    background-color: var(--cor-quarter);
+}
+
+.btn-dark-mode label input[type="checkbox"]:checked + .slider::after {
+    transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+    box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+
+.btn-dark-mode label input[type="checkbox"] {
+    display: none;
+}
+
+.btn-dark-mode label input[type="checkbox"]:active + .slider::after {
+    width: var(--toggle-wider);
+}
+
+.btn-dark-mode label input[type="checkbox"]:checked:active + .slider::after {
+    transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+}
+
 /*Sessão Menu*/
 
 header {
@@ -55,6 +111,10 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 0.625rem;
+}
+
+header h3 {
+    margin: 0;
 }
 
 section.menu{
@@ -72,7 +132,7 @@ nav a {
 }
   
   /* Fade in */
-a::after {
+nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -84,12 +144,11 @@ a::after {
     transition: opacity 300ms, transform 300ms;
 }
   
-a:hover::after,
-a:focus::after {
+nav a:hover::after,
+nav a:focus::after {
     opacity: 1;
     transform: translate3d(0, 0.2em, 0);
 }
-
 
 .menu__list {
     display: flex;
@@ -97,7 +156,6 @@ a:focus::after {
 }
 
 /*Sessão Title*/
-
 
 .title__div{
     display: flex;
@@ -108,7 +166,11 @@ a:focus::after {
 }
 
 .title__profile {
-    border-radius: 50%;
+    border-radius: 100%;
+}
+
+.title__container {
+    width: 70%;
 }
 
 .title__bio {
@@ -119,7 +181,7 @@ a:focus::after {
 }
 
 .title__subsection{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .title__network{
@@ -127,6 +189,33 @@ a:focus::after {
     gap: 50px;
     font-size: 20px;
 }
+
+/* Underline animação */
+.title__network a {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+  
+  /* Fade in */
+  .title__network a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background: var(--cor-quarter);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+  
+.title__network a:hover::after,
+.title__network a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
 
 /*Sessão About*/
 
@@ -145,7 +234,7 @@ section.about{
 /*Sessão Skills*/
 
 section .skills {
-    padding: 10px 0 10px 0;
+    padding: 20px 15px;
 }
 
 .skills__name,
@@ -185,7 +274,7 @@ section .skills {
 
 /*Sessão Hobbies*/
 section .hobbies {
-    padding: 0 0 15px 0;
+    padding: 20px 15px;
 }
 
 /* Experiência Acadêmica*/
@@ -193,7 +282,11 @@ section .hobbies {
 section.academic{
     text-align: center;
     background: var(--cor-secundaria);
-    padding-top: 0.625rem;
+    padding: 20px 15px;
+}
+
+.academic p {
+    margin: 0;
 }
 
 .academic__courses{
@@ -214,7 +307,7 @@ section.academic{
 /* experiência*/
 
 section.experience{
-    padding-bottom: 15px;
+    padding: 20px 15px;
 }
 
 .experience__section__title {
@@ -228,6 +321,22 @@ section.experience{
 
 .experiencie__box:nth-child(3) {
     flex-direction: row-reverse;
+    align-items: center;
+}
+
+.experiencie__box h4, h3, h2 {
+    margin-top: 0;
+}
+
+.experience__info{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.experience__img {
+    width: 30%;
 }
 
 .experience__repo {
@@ -268,6 +377,7 @@ section.experience{
 /*Contato*/
 
 section.formcontato {
+    padding: 20px 15px;
     background: var(--cor-secundaria);
 }
 
@@ -284,6 +394,7 @@ section.formcontato {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    padding-bottom: 10px;
 }
 
 .formcontato__form input, .formcontato__form textarea {
@@ -333,20 +444,17 @@ section.footer{
     text-align: center;
 }
 
-
 @media (max-width: 1250px) {
 
     *{
         padding: 0;
     }
 
-
     section {
         padding: 0 0.94rem 0;
     }
 
     /*Titulo*/
-
 
     .title__profile {
         width: 30%;
@@ -392,7 +500,6 @@ section.footer{
         gap: 5px;
     }
 
-    
     /*Formação Acadêmica*/
 
     .academic__courses__item__img {
@@ -420,15 +527,15 @@ section.footer{
 
     .experience__info {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
 
     .experience__info {
         flex-direction: column;
         justify-content: center;
+        width: 70%;
     }
-
 
     /*Contato*/
 
@@ -498,6 +605,7 @@ section.footer{
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 90%;
     }
 
 }
