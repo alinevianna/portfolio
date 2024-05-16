@@ -1,12 +1,12 @@
-:root{
-   --cor-de-fundo: #FBEFF4;
-   --cor-secundaria: #FBDADE;
-   --cor-terciaria: #FFD6E7;
-   --cor-quarter: #D62B81;
-   --cor-de-link: #000;
-   --cor-fonte-principal: #000;
-   --cor-fonte-secundaria: #000;
-   --font-main: 'Raleway', sans-serif;
+:root {
+    --cor-de-fundo: #FBEFF4;
+    --cor-secundaria: #FBDADE;
+    --cor-terciaria: #FFD6E7;
+    --cor-quarter: #D62B81;
+    --cor-de-link: #000;
+    --cor-fonte-principal: #000;
+    --cor-fonte-secundaria: #000;
+    --font-main: 'Raleway', sans-serif;
 }
 
 .dark-mode:root {
@@ -34,7 +34,9 @@ body {
     transition: background .3s;
 }
 
-ol, ul,li {
+ol,
+ul,
+li {
     list-style: none;
 }
 
@@ -83,11 +85,11 @@ section {
     transition: 0.3s all ease-in-out;
 }
 
-.btn-dark-mode label input[type="checkbox"]:checked + .slider {
+.btn-dark-mode label input[type="checkbox"]:checked+.slider {
     background-color: var(--cor-quarter);
 }
 
-.btn-dark-mode label input[type="checkbox"]:checked + .slider::after {
+.btn-dark-mode label input[type="checkbox"]:checked+.slider::after {
     transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
     box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
 }
@@ -96,11 +98,11 @@ section {
     display: none;
 }
 
-.btn-dark-mode label input[type="checkbox"]:active + .slider::after {
+.btn-dark-mode label input[type="checkbox"]:active+.slider::after {
     width: var(--toggle-wider);
 }
 
-.btn-dark-mode label input[type="checkbox"]:checked:active + .slider::after {
+.btn-dark-mode label input[type="checkbox"]:checked:active+.slider::after {
     transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
 }
 
@@ -117,7 +119,7 @@ header h3 {
     margin: 0;
 }
 
-section.menu{
+section.menu {
     display: flex;
     height: 5.5rem;
     justify-content: space-between;
@@ -130,8 +132,8 @@ nav a {
     position: relative;
     padding: 0.2em 0;
 }
-  
-  /* Fade in */
+
+/* Fade in */
 nav a::after {
     content: '';
     position: absolute;
@@ -143,7 +145,7 @@ nav a::after {
     opacity: 0;
     transition: opacity 300ms, transform 300ms;
 }
-  
+
 nav a:hover::after,
 nav a:focus::after {
     opacity: 1;
@@ -157,7 +159,7 @@ nav a:focus::after {
 
 /*Sessão Title*/
 
-.title__div{
+.title__div {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -180,11 +182,11 @@ nav a:focus::after {
     line-height: 61.05px;
 }
 
-.title__subsection{
+.title__subsection {
     font-size: 1.4rem;
 }
 
-.title__network{
+.title__network {
     display: flex;
     gap: 50px;
     font-size: 20px;
@@ -196,9 +198,9 @@ nav a:focus::after {
     position: relative;
     padding: 0.2em 0;
 }
-  
-  /* Fade in */
-  .title__network a::after {
+
+/* Fade in */
+.title__network a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -209,7 +211,7 @@ nav a:focus::after {
     opacity: 0;
     transition: opacity 300ms, transform 300ms;
 }
-  
+
 .title__network a:hover::after,
 .title__network a:focus::after {
     opacity: 1;
@@ -219,7 +221,7 @@ nav a:focus::after {
 
 /*Sessão About*/
 
-section.about{ 
+section.about {
     background: var(--cor-secundaria);
     height: 383px;
     display: flex;
@@ -242,7 +244,8 @@ section .skills {
     color: var(--cor-fonte-secundaria);
 }
 
-.skills__title, .hobbies__title {
+.skills__title,
+.hobbies__title {
     margin: 0;
     font-family: var(--font-main);
     font-size: 32px;
@@ -251,14 +254,16 @@ section .skills {
     padding: 15px 0 20px 0;
 }
 
-.skills__line, .hobbies__line {
+.skills__line,
+.hobbies__line {
     display: flex;
     justify-content: center;
     gap: 8px;
     padding: 0 0 20px 0;
 }
 
-.skills__box, .hobbies__box {
+.skills__box,
+.hobbies__box {
     display: flex;
     align-items: self-end;
     background: #FFFFFF;
@@ -266,7 +271,8 @@ section .skills {
     height: 10.85rem;
 }
 
-.skills__box ul, .hobbies__box ul {
+.skills__box ul,
+.hobbies__box ul {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -279,7 +285,7 @@ section .hobbies {
 
 /* Experiência Acadêmica*/
 
-section.academic{
+section.academic {
     text-align: center;
     background: var(--cor-secundaria);
     padding: 20px 15px;
@@ -289,7 +295,7 @@ section.academic{
     margin: 0;
 }
 
-.academic__courses{
+.academic__courses {
     display: flex;
     justify-content: center;
 }
@@ -306,7 +312,7 @@ section.academic{
 
 /* experiência*/
 
-section.experience{
+section.experience {
     padding: 20px 15px;
 }
 
@@ -324,11 +330,13 @@ section.experience{
     align-items: center;
 }
 
-.experiencie__box h4, h3, h2 {
+.experiencie__box h4,
+h3,
+h2 {
     margin-top: 0;
 }
 
-.experience__info{
+.experience__info {
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -343,7 +351,8 @@ section.experience{
     padding: 0 10px 0 0;
 }
 
-.experiencia__botao--repo, .experiencia__botao--demo {
+.experiencia__botao--repo,
+.experiencia__botao--demo {
     font-family: var(--font-main);
     font-weight: 700;
     width: 96px;
@@ -353,7 +362,7 @@ section.experience{
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    box-shadow: 3px 2px 5px 3px rgba(0,0,0,0.1);
+    box-shadow: 3px 2px 5px 3px rgba(0, 0, 0, 0.1);
 }
 
 .experiencia__botao--repo {
@@ -381,6 +390,23 @@ section.formcontato {
     background: var(--cor-secundaria);
 }
 
+.formcontato__text.active {
+    display: none;
+}
+
+.form__contato__enviado.active {
+    display: none;
+}
+
+.form__contato__enviado {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
 .formcontato span {
     display: none;
 }
@@ -397,20 +423,23 @@ section.formcontato {
     padding-bottom: 10px;
 }
 
-.formcontato__form input, .formcontato__form textarea {
+.formcontato__form input,
+.formcontato__form textarea {
     background: var(--cor-de-fundo);
     outline: none;
     border-radius: 6px;
     border: 2px solid var(--cor-de-fundo);
     transition: .3s;
     font-family: var(--font-main);
+    color: var(--cor-de-link);
 }
 
 .formcontato__form input {
     height: 30px;
 }
 
-.formcontato__form input:focus, .formcontato__form textarea:focus {
+.formcontato__form input:focus,
+.formcontato__form textarea:focus {
     border-color: var(--cor-quarter);
 }
 
@@ -418,7 +447,8 @@ section.formcontato {
     color: var(--cor-de-link);
 }
 
-.formcontato__form button {
+.formcontato__form button,
+.form__contato__enviado button {
     font-family: var(--font-main);
     font-weight: 700;
     height: 40px;
@@ -431,22 +461,23 @@ section.formcontato {
     cursor: pointer;
 }
 
-.formcontato__form button:hover {
+.formcontato__form button:hover,
+.form__contato__enviado button:hover {
     background: var(--cor-quarter);
     color: var(--cor-de-fundo);
     border: 2px solid var(--cor-terciaria);
-} 
+}
 
 
 /*footeer*/
 
-section.footer{
+section.footer {
     text-align: center;
 }
 
 @media (max-width: 1250px) {
 
-    *{
+    * {
         padding: 0;
     }
 
@@ -464,7 +495,7 @@ section.footer{
         font-size: 2.25rem;
     }
 
-    .title__network{
+    .title__network {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -479,12 +510,12 @@ section.footer{
 
     /*Skills e Hobbies*/
 
-    .skills__line, 
+    .skills__line,
     .hobbies__line {
         flex-wrap: wrap;
     }
 
-    .skills__box, 
+    .skills__box,
     .hobbies__box {
         width: 6rem;
         height: 6rem;
@@ -492,7 +523,7 @@ section.footer{
         align-items: center;
     }
 
-    .skills__box ul, 
+    .skills__box ul,
     .hobbies__line ul {
         padding: 0;
         flex-direction: column-reverse;
@@ -548,7 +579,7 @@ section.footer{
         width: 60%;
     }
 
-    .formcontato__img { 
+    .formcontato__img {
         width: 10%;
     }
 
@@ -587,7 +618,7 @@ section.footer{
         align-self: center;
     }
 
-        /*Experiência Profissional*/
+    /*Experiência Profissional*/
 
     .experiencie__box {
         flex-direction: column;
