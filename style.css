@@ -56,7 +56,7 @@ section {
     --button-height: 1em;
     --toggle-diameter: 0.5em;
     --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
-    --toggle-shadow-offset: 10px;
+    --toggle-shadow-offset: 0.625rem;
     --toggle-wider: 3em;
     --color-green: #4296f4;
 }
@@ -179,7 +179,7 @@ nav a:focus::after {
     font-family: Raleway;
     font-size: 3.25rem;
     font-weight: 700;
-    line-height: 61.05px;
+    line-height: 3.816rem;
 }
 
 .title__subsection {
@@ -188,8 +188,8 @@ nav a:focus::after {
 
 .title__network {
     display: flex;
-    gap: 50px;
-    font-size: 20px;
+    gap: 3.125rem;
+    font-size: 1.25rem;
 }
 
 /* Underline animação */
@@ -236,7 +236,7 @@ section.about {
 /*Sessão Skills*/
 
 section .skills {
-    padding: 20px 15px;
+    padding: 1.25rem 0.9rem;
 }
 
 .skills__name,
@@ -251,7 +251,7 @@ section .skills {
     font-size: 32px;
     font-weight: 700;
     text-align: center;
-    padding: 15px 0 20px 0;
+    padding: 0.9rem 0 1.25rem 0;
 }
 
 .skills__line,
@@ -259,7 +259,7 @@ section .skills {
     display: flex;
     justify-content: center;
     gap: 8px;
-    padding: 0 0 20px 0;
+    padding: 0 0 1.25rem 0;
 }
 
 .skills__box,
@@ -280,7 +280,7 @@ section .skills {
 
 /*Sessão Hobbies*/
 section .hobbies {
-    padding: 20px 15px;
+    padding: 1.25rem 0.9rem;
 }
 
 /* Experiência Acadêmica*/
@@ -288,7 +288,7 @@ section .hobbies {
 section.academic {
     text-align: center;
     background: var(--cor-secundaria);
-    padding: 20px 15px;
+    padding: 1.25rem 0.9rem;
 }
 
 .academic p {
@@ -313,7 +313,7 @@ section.academic {
 /* experiência*/
 
 section.experience {
-    padding: 20px 15px;
+    padding: 1.25rem 0.9rem;
 }
 
 .experience__section__title {
@@ -348,7 +348,7 @@ h2 {
 }
 
 .experience__repo {
-    padding: 0 10px 0 0;
+    padding: 0 0.625rem 0 0;
 }
 
 .experiencia__botao--repo,
@@ -358,8 +358,8 @@ h2 {
     width: 96px;
     height: 40px;
     padding: 12px, 16px, 12px, 16px;
-    gap: 10px;
-    border-radius: 10px;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
     border: none;
     cursor: pointer;
     box-shadow: 3px 2px 5px 3px rgba(0, 0, 0, 0.1);
@@ -386,8 +386,10 @@ h2 {
 /*Contato*/
 
 section.formcontato {
-    padding: 20px 15px;
+    padding: 1.25rem 0.9rem;
     background: var(--cor-secundaria);
+    display: flex;
+    justify-content: center;
 }
 
 .formcontato__text.active {
@@ -398,17 +400,15 @@ section.formcontato {
     display: none;
 }
 
+
 .form__contato__enviado {
     display: flex;
-    width: 30%;
+    width: 50%;
     flex-direction: column;
+    text-align: center;
     justify-content: center;
     align-items: center;
     gap: 40px;
-}
-
-.formcontato span {
-    display: none;
 }
 
 .formcontato__contato {
@@ -416,15 +416,27 @@ section.formcontato {
     gap: 5px;
 }
 
+.formcontato__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .formcontato__form {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
+}
+
+.mensagem-erro {
+    display: flex;
+    padding-top: 0.625rem;
 }
 
 .formcontato__form input,
 .formcontato__form textarea {
+    display: flex;
     background: var(--cor-de-fundo);
     outline: none;
     border-radius: 6px;
@@ -432,6 +444,7 @@ section.formcontato {
     transition: .3s;
     font-family: var(--font-main);
     color: var(--cor-de-link);
+    width: 100%;
 }
 
 .formcontato__form input {
@@ -453,8 +466,8 @@ section.formcontato {
     font-weight: 700;
     height: 40px;
     padding: 12px, 16px, 12px, 16px;
-    gap: 10px;
-    border-radius: 10px;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
     border: 2px solid var(--cor-quarter);
     background: var(--cor-de-fundo);
     color: var(--cor-de-link);
@@ -575,12 +588,28 @@ section.footer {
         text-align: center;
     }
 
+    .formcontato__text.active {
+        display: none;
+    }
+    
+    .form__contato__enviado.active {
+        display: none;
+    }
+
     .formcontato--esquerda img {
         width: 60%;
     }
 
     .formcontato__img {
         width: 10%;
+    }
+
+    .form__contato__enviado {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.625rem;
     }
 
     /*Footer*/

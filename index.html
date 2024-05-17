@@ -269,18 +269,28 @@
                         possível. </h3>
                     <iframe name="hiddenFrame" width="0" height="0" style="display: none;"></iframe>
                     <form action="https://api.sheetmonkey.io/form/rKUrmkSXdfNUp23FNZ9FBK" method="post"
-                        class="formcontato__form" target="hiddenFrame">
-                        <input class="formcontato__input required" type="text" name="nome" id="nome" placeholder="Nome">
-                        <span class="span-required">Nome deve ter no mínimo 3 caracteres.</span>
-                        <input class="formcontato__input required" type="email" name="email" id="email"
-                            placeholder="Email" autocomplete="on">
-                        <span class="span-required">Digite um email válido.</span>
-                        <input class="formcontato__input required" type="text" name="assunto" id="assunto"
-                            placeholder="Assunto" autocomplete="off">
-                        <span class="span-required">Digite uma mensagem válida.</span>
-                        <textarea class="formcontato__textarea required" rows="5" cols="40" id="mensagem"
-                            name="mensagem" placeholder="Sua mensagem" autocomplete="off"></textarea>
-                        <button type="submit" class="formcontato__botao">Enviar mensagem</button>
+                        class="formcontato__form" target="hiddenFrame" id="form" data-formulario>
+
+                        <label class="formcontato__label">
+                            <input class="formcontato__input" type="text" name="nome" id="nome" placeholder="Nome"
+                                minlength="3" required>
+                            <span class="mensagem-erro"></span></label>
+
+                        <label class="formcontato__label">
+                            <input class="formcontato__input" type="email" name="email" id="email" minlength="4"
+                                placeholder="Email" autocomplete="on" required>
+                            <span class="mensagem-erro"></span></label>
+
+                        <label class="formcontato__label">
+                            <input class="formcontato__input" type="text" name="assunto" id="assunto"
+                                placeholder="Assunto" autocomplete="off" required />
+                            <span class="mensagem-erro"></span></label>
+
+                        <label class="formcontato__label">
+                            <textarea class="formcontato__textarea formcontato__input" rows="5" cols="40" id="mensagem"
+                                name="mensagem" placeholder="Sua mensagem" autocomplete="off" required></textarea>
+                            <span class="mensagem-erro"></label>
+                        <button type="submit" class="formcontato__botao" id="btnSend">Enviar mensagem</button>
                     </form>
                 </div>
                 <div class="form__contato__enviado active">
@@ -300,8 +310,8 @@
         </section>
     </div>
     <!-- Script Linkado do seu documento de JavaScript -->
-    <script src="validate.js"></script>
-    <script src="main.js"></script>
+    <script src="validate.js" module></script>
+    <script src="main.js" module></script>
 </body>
 
 </html>

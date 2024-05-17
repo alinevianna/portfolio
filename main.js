@@ -16,16 +16,15 @@ $checkbox.addEventListener('change', function () {
 })
 
 formBtn.addEventListener("click", () => {
-    formDisplay.classList.add('active')
-    formSend.classList.remove('active')
+
+    if (validaCampo() == true) {
+        formDisplay.classList.add('active')
+        formSend.classList.remove('active')
+    }
 })
 
 formBack.addEventListener("click", () => {
     formDisplay.classList.remove('active')
     formSend.classList.add('active')
-    document.getElementById('nome').value = ''
-    document.getElementById('email').value = ''
-    document.getElementById('assunto').value = ''
-    document.getElementById('mensagem').value = ''
+    document.getElementById("form").reset();
 })
-
