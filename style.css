@@ -46,7 +46,7 @@ a {
 }
 
 section {
-    padding: 0 9.5rem 0 9.5rem;
+    padding: 0.8rem 9.5rem 0 9.5rem;
 }
 
 /*Botão Dark Mode*/
@@ -121,9 +121,18 @@ header h3 {
 
 section.menu {
     display: flex;
-    height: 5.5rem;
+    height: 2.5rem;
     justify-content: space-between;
     align-items: center;
+}
+
+.menu nav {
+    position: fixed;
+    right: 9.5rem;
+    
+    background-color: var(--cor-de-fundo);
+    border-radius: 20px;
+    padding: 5px;
 }
 
 /* Underline animação */
@@ -154,7 +163,10 @@ nav a:focus::after {
 
 .menu__list {
     display: flex;
-    gap: 1.87rem;
+    align-items: center;
+    height: 1px;
+    gap: 1.80rem;
+    padding: 0;
 }
 
 /*Sessão Title*/
@@ -515,6 +527,10 @@ section.footer {
         align-items: center;
     }
 
+    .menu nav {
+        right: 1rem;
+    }
+
     /*Sessão sobre*/
 
     .about__container {
@@ -628,6 +644,10 @@ section.footer {
 
     .menu__list__item {
         display: none;
+    }
+
+    .menu nav {
+        right: 0.5rem
     }
 
     .title__div {
