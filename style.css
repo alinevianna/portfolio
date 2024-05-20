@@ -493,6 +493,13 @@ section.formcontato {
     border: 2px solid var(--cor-terciaria);
 }
 
+.formcontato__form button:disabled {
+    background-color: rgb(204, 204, 204);
+    color: gray;
+    border: gray;
+    cursor: default;
+} 
+
 
 /*footeer*/
 
