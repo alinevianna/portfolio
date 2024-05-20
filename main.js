@@ -1,3 +1,4 @@
+//declaration of variables
 const $html = document.querySelector('html');
 const $checkbox = document.querySelector('#switch');
 const foto = document.querySelector('.title__profile')
@@ -6,6 +7,7 @@ const formBtn = document.querySelector('.formcontato__botao')
 const formSend = document.querySelector('.form__contato__enviado')
 const formBack = document.querySelector('.formcontato__botao_back')
 
+//add an event listener to the box that detects changes in state
 $checkbox.addEventListener('change', function () {
     $html.classList.toggle('dark-mode');
     if ($html.className == 'dark-mode') {
@@ -15,9 +17,9 @@ $checkbox.addEventListener('change', function () {
     }
 })
 
+//add an event listener for the form submit button
 formBtn.addEventListener("click", () => {
-
-    if (validaCampo() == true) {
+    if (verificaCamposPreenchidos() == true) {
         formDisplay.classList.add('active')
         formSend.classList.remove('active')
     }

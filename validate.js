@@ -1,9 +1,11 @@
+//declaration of variables
 const camposDoFormulario = document.querySelectorAll("[required]");
-const camposPreenchidos = document.querySelectorAll('.formcontato__input')
 const formulario = document.querySelector("[data-formulario]");
+const botaoEnviar = document.getElementById("btnSend");
 
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("blur", () => verificaCampo(campo));
+    campo.addEventListener("input", () => verificaCamposPreenchidos());
     campo.addEventListener("invalid", evento => evento.preventDefault());
 })
 
@@ -34,6 +36,7 @@ const mensagens = {
     }
 }
 
+//checks and validates the field
 function verificaCampo(campo) {
     let mensagem = "";
     campo.setCustomValidity('');
@@ -46,7 +49,7 @@ function verificaCampo(campo) {
     const mensagemErro = campo.parentNode.querySelector('.mensagem-erro');
     const validadorDeInput = campo.checkValidity();
 
-    if (!validadorDeInput || validaCampo()) {
+    if (!validadorDeInput || verificaCamposPreenchidos()) {
         mensagemErro.textContent = mensagem;
         document.getElementById("btnSend").disabled
     } else {
@@ -55,28 +58,17 @@ function verificaCampo(campo) {
 
 }
 
-// function analisaCampo() {
-//     if (camposPreenchidos.value == null || camposPreenchidos.value == '') {
-//         console.log('vazio')
-//     } else {
-//         console.log('preenchido')
-//     }
-// }
-
-for (let contador = 0; contador < camposPreenchidos.length; contador++) {
-
-    const campos = camposPreenchidos[contador]
-
-    function validaCampo() {
-        {
-            if (campos.value != '') {
-                return true;
-            } else {
-                return false;
-            }
+//checks that all mandatory fields are filled in correctly
+function verificaCamposPreenchidos() {
+    let todosCamposValidos = true;
+    camposDoFormulario.forEach(campo => {
+        if (!campo.checkValidity()) {
+            todosCamposValidos = false;
         }
+    })
+
+    if (todosCamposValidos == true) {
+        botaoEnviar.removeAttribute('disabled');
+        return true;
     }
 }
-
-
-
