@@ -1,22 +1,25 @@
-//declaration of variables
+// Variable declarations
 const camposDoFormulario = document.querySelectorAll("[required]");
 const formulario = document.querySelector("[data-formulario]");
 const botaoEnviar = document.getElementById("btnSend");
 
+// Add event listeners for validation on each required field
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("blur", () => verificaCampo(campo));
-    campo.addEventListener("input", () => verificaCamposPreenchidos());
+    campo.addEventListener("input", () => verificaCampo(campo));
     campo.addEventListener("invalid", evento => evento.preventDefault());
-})
+});
 
+// Types of errors to check
 const tiposDeErro = [
     'valueMissing',
     'typeMismatch',
     'patternMismatch',
     'tooShort',
     'customError'
-]
+];
 
+// Specific error messages for each field
 const mensagens = {
     nome: {
         valueMissing: "O campo de nome não pode estar vazio.",
@@ -34,9 +37,9 @@ const mensagens = {
     mensagem: {
         valueMissing: "O campo de mensagem não pode estar vazio.",
     }
-}
+};
 
-//checks and validates the field
+// Checks and validates the field
 function verificaCampo(campo) {
     let mensagem = "";
     campo.setCustomValidity('');
@@ -45,30 +48,29 @@ function verificaCampo(campo) {
         if (campo.validity[erro]) {
             mensagem = mensagens[campo.name][erro];
         }
-    })
+    });
+
     const mensagemErro = campo.parentNode.querySelector('.mensagem-erro');
     const validadorDeInput = campo.checkValidity();
 
-    if (!validadorDeInput || verificaCamposPreenchidos()) {
+    if (!validadorDeInput) {
         mensagemErro.textContent = mensagem;
-        document.getElementById("btnSend").disabled
     } else {
         mensagemErro.textContent = "";
     }
 
+    verificaCamposPreenchidos();
 }
 
-//checks that all mandatory fields are filled in correctly
+// Checks that all mandatory fields are filled in correctly
 function verificaCamposPreenchidos() {
     let todosCamposValidos = true;
     camposDoFormulario.forEach(campo => {
         if (!campo.checkValidity()) {
             todosCamposValidos = false;
         }
-    })
+    });
 
-    if (todosCamposValidos == true) {
-        botaoEnviar.removeAttribute('disabled');
-        return true;
-    }
+    botaoEnviar.disabled = !todosCamposValidos;
+    return todosCamposValidos;
 }
